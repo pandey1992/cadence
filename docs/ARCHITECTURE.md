@@ -20,6 +20,7 @@ Optional delivery support: Codex plugin • Git whitespace hook • CI structura
 
 - `workflow.md` supplies lane selection, planning, traceability, and verification guidance.
 - `architecture.md` supplies design, review, and improvement prompts for meaningful seams.
+- `project-context.md` separates Greenfield bootstrapping from Brownfield discovery and safe evolution.
 
 This separation keeps routine invocation small while allowing a deeper architecture pass when the task calls for one.
 
@@ -44,3 +45,5 @@ The Git pre-commit hook runs only `git diff --cached --check`. It catches whites
 ## Evolution
 
 Cadence should evolve from demonstrated prompts and outcomes. Add a rule only when it changes an agent decision in a repeatable way. New integrations should remain optional unless a reliable cross-harness capability makes them safe and useful by default.
+
+The `tests/` directory validates deterministic repository behaviour: structural validation, the opt-in Git hook’s whitespace detection, and the presence of the project-context route in both supported distributions. It intentionally does not attempt to unit-test model reasoning; examples and real-user feedback are the behavioral evaluation loop for that.

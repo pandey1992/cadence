@@ -67,6 +67,24 @@ Cadence inspects the repository, selects a risk lane, aligns on outcome and cons
 
 Read the [workflow reference](skills/cadence/references/workflow.md) for lane selection, lightweight artifacts, and architecture guidance. The [Cadence architecture](docs/ARCHITECTURE.md) explains the product’s own design choices.
 
+## Greenfield and brownfield
+
+Cadence does not use one flow for every repository:
+
+| Context | First priority | Architecture posture |
+| --- | --- | --- |
+| Greenfield | Prove the smallest valuable end-to-end journey | Create a minimal, reversible baseline and walking skeleton |
+| Brownfield | Learn and preserve the system’s real behaviour | Map the change surface, add characterization evidence, then change the smallest safe seam |
+
+A new module inside an existing system uses both: Brownfield at the integration boundary and Greenfield within the new module. See the full [project-context guide](skills/cadence/references/project-context.md), plus [greenfield](examples/greenfield-saas.md) and [brownfield](examples/brownfield-feature.md) examples.
+
+## Examples
+
+- [Standard feature](examples/standard-feature.md)
+- [Assured migration](examples/assured-migration.md)
+- [Greenfield SaaS first release](examples/greenfield-saas.md)
+- [Brownfield feature and architectural improvement](examples/brownfield-feature.md)
+
 ## Design principles
 
 - Evidence over ceremony.

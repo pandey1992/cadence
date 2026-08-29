@@ -11,6 +11,8 @@ Use Cadence to deliver a working, evidenced change without imposing enterprise c
 
 Inspect repository instructions, current status, relevant code, tests, checks, and the closest existing implementation. Establish the observable outcome, material constraints, existing conventions, and risk. Ask only when an unresolved decision materially changes behaviour; otherwise state a reversible assumption and proceed.
 
+Classify the project context before selecting implementation tactics. New products need a minimal safe baseline and walking skeleton; established codebases need evidence of current behaviour and constraints before change. Read [project-context.md](references/project-context.md) for the relevant route.
+
 | Lane | Indicators | Minimum evidence |
 | --- | --- | --- |
 | **Quick** | Narrow, reversible, well-understood change without contract risk | Inspect target and run the closest practical check |

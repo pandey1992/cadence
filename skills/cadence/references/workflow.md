@@ -2,6 +2,8 @@
 
 The lane is a confidence budget, not a checklist to complete mechanically.
 
+Choose the project-context route in [project-context.md](project-context.md) before applying a lane. Project maturity changes what must be discovered, not the risk standard for a change.
+
 ## Quick lane
 
 State the outcome; inspect the target and immediate callers; make the smallest compatible change; run the closest focused check (test, type check, lint, build, preview, or explicit manual observation); and inspect the diff. Move to Standard when unclear behaviour, multiple components, or a user-facing contract appears.

@@ -11,6 +11,8 @@ Use Cadence to produce a working, evidenced change without imposing enterprise c
 
 Inspect repository instructions, current status, relevant code, tests, checks, and the closest existing implementation. Establish the observable outcome, material constraints, existing conventions, and the risk lane. Ask a concise question only when a missing decision would materially change delivered behaviour; otherwise state a reversible assumption and proceed.
 
+First classify the project context. For a new product, establish the smallest viable architectural baseline and a walking skeleton before scaling design. For an established codebase, learn the existing behaviour and constraints before proposing a change or improvement. Read [project-context.md](references/project-context.md) for the relevant route; do not apply greenfield assumptions to a brownfield system.
+
 ## Choose the lightest suitable lane
 
 | Lane | Indicators | Minimum evidence |

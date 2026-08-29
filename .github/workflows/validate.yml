@@ -12,5 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate repository structure
         run: python3 scripts/validate-repo.py
+      - name: Run repository tests
+        run: python3 -m unittest discover -s tests -v
       - name: Check hook syntax
         run: bash -n plugins/cadence/hooks/pre-commit plugins/cadence/scripts/cadence-check.sh plugins/cadence/scripts/install-git-hook.sh
