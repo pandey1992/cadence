@@ -57,6 +57,29 @@ Restart or refresh the session if it does not discover the skill immediately, th
 Use $cadence to add audit logging to account changes.
 ```
 
+### Claude Code
+
+Cadence is published as a Claude Code marketplace plugin. In Claude Code, add the marketplace and install it:
+
+```text
+/plugin marketplace add pandey1992/cadence
+/plugin install cadence@cadence-marketplace
+```
+
+Choose the preferred installation scope when prompted, then run `/reload-plugins` if Claude Code requests it. Invoke the skill with:
+
+```text
+/cadence:cadence add audit logging to account changes
+```
+
+For local development without installation, start Claude Code from this repository with:
+
+```bash
+claude --plugin-dir ./plugins/claude-cadence
+```
+
+Plugin skills are namespaced, so the local development invocation is `/cadence:cadence`.
+
 ### Other agents
 
 The core skill is plain Markdown. Copy `skills/cadence` to the location your agent uses for skills and invoke `cadence` with that agent’s convention. `agents/openai.yaml` is optional Codex UI metadata.
@@ -100,6 +123,10 @@ skills/cadence/
 ├── SKILL.md                    # Agent entry point
 ├── agents/openai.yaml          # Optional Codex UI metadata
 └── references/workflow.md      # Lanes, architecture, gates, and templates
+
+plugins/
+├── cadence/                     # Codex plugin distribution
+└── claude-cadence/              # Claude Code plugin distribution
 ```
 
 ## Contributing

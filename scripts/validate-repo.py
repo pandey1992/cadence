@@ -19,6 +19,12 @@ REQUIRED = [
     "skills/cadence/references/architecture.md",
     "skills/cadence/references/project-context.md",
     "plugins/cadence/.codex-plugin/plugin.json",
+    ".claude-plugin/marketplace.json",
+    "plugins/claude-cadence/.claude-plugin/plugin.json",
+    "plugins/claude-cadence/skills/cadence/SKILL.md",
+    "plugins/claude-cadence/skills/cadence/references/workflow.md",
+    "plugins/claude-cadence/skills/cadence/references/project-context.md",
+    "plugins/claude-cadence/skills/cadence/references/architecture.md",
     "plugins/cadence/skills/cadence/SKILL.md",
     "plugins/cadence/skills/cadence/references/project-context.md",
     "plugins/cadence/hooks/pre-commit",
@@ -47,5 +53,19 @@ if manifest.get("name") != "cadence" or manifest.get("version") != "0.1.0":
     fail("plugin manifest must identify cadence at version 0.1.0")
 if manifest.get("skills") != "./skills/":
     fail("plugin manifest must expose ./skills/")
+
+claude_manifest_path = ROOT / "plugins/claude-cadence/.claude-plugin/plugin.json"
+claude_manifest = json.loads(claude_manifest_path.read_text())
+if claude_manifest.get("name") != "cadence" or claude_manifest.get("skills") != "./skills/":
+    fail("Claude plugin manifest must expose cadence through ./skills/")
+
+marketplace_path = ROOT / ".claude-plugin/marketplace.json"
+marketplace = json.loads(marketplace_path.read_text())
+plugins = marketplace.get("plugins", [])
+if marketplace.get("name") != "cadence-marketplace" or not any(
+    entry.get("name") == "cadence" and entry.get("source") == "./plugins/claude-cadence"
+    for entry in plugins
+):
+    fail("Claude marketplace must publish the cadence plugin from its local source")
 
 print("Cadence repository structure is valid.")

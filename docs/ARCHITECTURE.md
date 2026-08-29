@@ -11,7 +11,7 @@ Cadence skill ──► risk lane ──► alignment / architecture / implement
     │                                      ▼
     └──────────────────────────────► verification and honest handoff
 
-Optional delivery support: Codex plugin • Git whitespace hook • CI structural validation
+Optional delivery support: Codex plugin • Claude Code plugin/marketplace • Git whitespace hook • CI structural validation
 ```
 
 ## Core: portable skill
@@ -28,7 +28,9 @@ This separation keeps routine invocation small while allowing a deeper architect
 
 `plugins/cadence` is self-contained for Codex plugin installation. It includes a distribution copy of the skill, a valid plugin manifest, optional Git tooling, and no required external service or MCP dependency. The plugin manifest intentionally does not declare hooks because the Codex manifest schema does not support hook registration; the Git hook is an explicit, user-installed integration.
 
-The standalone and plugin variants share the same principles. Changes that affect agent behaviour should be made to both distributions in the same pull request and checked with their respective validators.
+`plugins/claude-cadence` is the self-contained Claude Code distribution. The repository-level `.claude-plugin/marketplace.json` makes it discoverable through Claude Code’s marketplace flow. It provides the same skill and references without lifecycle hooks, agents, or MCP servers: Cadence does not need a background integration to give useful engineering guidance, and avoiding automatic mutation is part of its safety model.
+
+The standalone and plugin variants share the same principles. Changes that affect agent behaviour should be made to all distributions in the same pull request and checked with their respective validators.
 
 ## Optional Git hygiene
 

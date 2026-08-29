@@ -1,0 +1,15 @@
+{
+  "name": "cadence",
+  "displayName": "Cadence",
+  "version": "0.1.0",
+  "description": "Risk-adaptive production engineering workflow for Claude Code.",
+  "author": {
+    "name": "Cadence contributors",
+    "url": "https://github.com/pandey1992/cadence"
+  },
+  "homepage": "https://github.com/pandey1992/cadence",
+  "repository": "https://github.com/pandey1992/cadence",
+  "license": "MIT",
+  "keywords": ["engineering", "architecture", "testing", "workflow", "production"],
+  "skills": "./skills/"
+}

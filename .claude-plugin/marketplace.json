@@ -1,0 +1,16 @@
+{
+  "name": "cadence-marketplace",
+  "owner": {
+    "name": "Cadence contributors",
+    "url": "https://github.com/pandey1992/cadence"
+  },
+  "description": "Risk-adaptive production engineering workflows for AI coding agents.",
+  "plugins": [
+    {
+      "name": "cadence",
+      "source": "./plugins/claude-cadence",
+      "description": "Production-quality AI engineering workflow with architecture and verification guidance.",
+      "version": "0.1.0"
+    }
+  ]
+}

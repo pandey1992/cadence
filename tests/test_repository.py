@@ -52,6 +52,14 @@ class CadenceRepositoryTests(unittest.TestCase):
             (ROOT / "plugins/cadence/skills/cadence/references/project-context.md").is_file()
         )
 
+    def test_claude_marketplace_points_to_self_contained_plugin(self) -> None:
+        marketplace = ROOT / ".claude-plugin/marketplace.json"
+        manifest = ROOT / "plugins/claude-cadence/.claude-plugin/plugin.json"
+        self.assertTrue(marketplace.is_file())
+        self.assertTrue(manifest.is_file())
+        self.assertIn('"source": "./plugins/claude-cadence"', marketplace.read_text())
+        self.assertIn('"skills": "./skills/"', manifest.read_text())
+
 
 if __name__ == "__main__":
     unittest.main()
