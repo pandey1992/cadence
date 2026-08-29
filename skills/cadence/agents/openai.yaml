@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cadence"
+  short_description: "Production workflow for AI-built software"
+  default_prompt: "Use $cadence to plan and safely implement this change."

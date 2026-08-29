@@ -1,0 +1,18 @@
+{
+  "name": "cadence",
+  "version": "0.1.0",
+  "description": "Risk-adaptive workflow for production AI engineering.",
+  "author": {
+    "name": "Cadence contributors"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Cadence",
+    "shortDescription": "Production-quality AI engineering workflow.",
+    "longDescription": "Cadence helps agents align, design, implement, verify, review, and improve production software with rigor proportional to risk.",
+    "developerName": "Cadence contributors",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": "Use $cadence to plan and safely implement this change."
+  }
+}
